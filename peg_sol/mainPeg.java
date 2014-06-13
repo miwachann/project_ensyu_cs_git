@@ -1,15 +1,17 @@
+
 package peg_sol;
 
 public class mainPeg extends JFrame
 {
-	//MVCモデルのインスタンス生成
+	
 	public mainPeg()
 	{
 		
 	}
 	
-	
-    //メニューバー
+	/**
+	 * メニューバーを追加するメソッド
+	 */
 	public void makeMenuBar()
 	{
 		
