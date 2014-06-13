@@ -4,10 +4,7 @@ package peg_sol;
 
 public class ControllerPeg {
     
-    
-	/**
-	 * 
-	 */
+	
 	public ControllerPeg(ViewPeg p, ModelPeg m)
 	{
 		
@@ -15,7 +12,7 @@ public class ControllerPeg {
 	
 	
 	/**
-	 * 
+	 * 新しいゲーム（ステージの選択）をするメソッド
 	 */
 	public void newGame()
 	{
@@ -24,7 +21,7 @@ public class ControllerPeg {
 	
 	
 	/**
-	 * 
+	 * ステージのやり直しをするメソッド
 	 */
 	public void resetStage()
 	{
@@ -33,16 +30,16 @@ public class ControllerPeg {
 	
 	
 	/**
-	 * 
+	 * ステージを作成するモードに移行するメソッド
 	 */
-	public void renewStage()
+	public void makeStage()
 	{
 		panel.repaint();
 	}
 	
 	
 	/**
-	 * 
+	 * クリックされた際の処理を行うメソッド
 	 */
 	public void didClick(int x, int y)
 	{
