@@ -1,13 +1,18 @@
 
 package peg_sol;
 
+import java.awt.*;
+import javax.swing.*;
 
 public class ControllerPeg {
-    
 	
-	public ControllerPeg(ViewPeg p, ModelPeg m)
+	ViewPeg view;
+	ModelPeg model;
+	
+	public ControllerPeg(ViewPeg v, ModelPeg m)
 	{
-		
+		view = v;
+        model = m;
 	}
 	
 	
@@ -16,7 +21,9 @@ public class ControllerPeg {
 	 */
 	public void newGame()
 	{
-		panel.repaint();
+        //model.selectStage();
+		//gameflag = true;
+		//panel.repaint();
 	}
 	
 	
@@ -25,7 +32,8 @@ public class ControllerPeg {
 	 */
 	public void resetStage()
 	{
-		panel.repaint();
+        //model.resetStage();
+		//panel.repaint();
 	}
 	
 	
@@ -34,7 +42,8 @@ public class ControllerPeg {
 	 */
 	public void makeStage()
 	{
-		panel.repaint();
+        
+		//panel.repaint();
 	}
 	
 	
@@ -43,6 +52,7 @@ public class ControllerPeg {
 	 */
 	public void didClick(int x, int y)
 	{
+		
 		
 	}
 }
