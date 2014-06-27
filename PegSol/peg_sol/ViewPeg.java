@@ -40,10 +40,7 @@ public class ViewPeg extends JPanel
 	{
 		width = m;
 		height = n;
-<<<<<<< HEAD:peg_sol/ViewPeg.java
         ModelPeg = model;
-=======
->>>>>>> FETCH_HEAD:PegSol/peg_sol/ViewPeg.java
 	}
 	
 	

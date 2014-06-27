@@ -7,20 +7,13 @@ import javax.swing.*;
 public class ControllerPeg
 {
 	
-<<<<<<< HEAD:peg_sol/ControllerPeg.java
-=======
 	ViewPeg view;
 	ModelPeg model;
 	
->>>>>>> FETCH_HEAD:PegSol/peg_sol/ControllerPeg.java
 	public ControllerPeg(ViewPeg v, ModelPeg m)
 	{
 		view = v;
         model = m;
-<<<<<<< HEAD:peg_sol/ControllerPeg.java
-        gameflag = false;
-=======
->>>>>>> FETCH_HEAD:PegSol/peg_sol/ControllerPeg.java
 	}
 	
 	
@@ -29,15 +22,9 @@ public class ControllerPeg
 	 */
 	public void newGame()
 	{
-<<<<<<< HEAD:peg_sol/ControllerPeg.java
-        model.selectStage();
-		gameflag = true;
-		panel.repaint();
-=======
         //model.selectStage();
 		//gameflag = true;
 		//panel.repaint();
->>>>>>> FETCH_HEAD:PegSol/peg_sol/ControllerPeg.java
 	}
 	
 	
@@ -46,13 +33,8 @@ public class ControllerPeg
 	 */
 	public void resetStage()
 	{
-<<<<<<< HEAD:peg_sol/ControllerPeg.java
-        model.resetStage();
-		panel.repaint();
-=======
         //model.resetStage();
 		//panel.repaint();
->>>>>>> FETCH_HEAD:PegSol/peg_sol/ControllerPeg.java
 	}
 	
 	
@@ -61,12 +43,7 @@ public class ControllerPeg
 	 */
 	public void makeStage()
 	{
-<<<<<<< HEAD:peg_sol/ControllerPeg.java
-        
-		panel.repaint();
-=======
 		//panel.repaint();
->>>>>>> FETCH_HEAD:PegSol/peg_sol/ControllerPeg.java
 	}
 	
 	
