@@ -3,7 +3,8 @@ package peg_sol;
 
 import java.util.*;
 
-enum GridAttr {
+enum GridAttr
+{
 	Grownd, Peg, SetPeg
 };
 
@@ -63,7 +64,8 @@ public class ModelPeg
 	/**
 	 * マスに何が配置されているかを返すメソッド
 	 */
-	public GridAttr getAttribute(int x, int y) {
+	public GridAttr getAttribute(int x, int y)
+	{
 		return arr[x][y];
 	}
 	
