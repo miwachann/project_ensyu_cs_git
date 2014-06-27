@@ -1,6 +1,12 @@
 
 package peg_sol;
 
+import java.awt.*;
+import java.awt.event.*;
+import java.net.URL;
+import java.util.*;
+import javax.swing.*;
+
 
 public class ViewPeg extends JPanel
 {
@@ -34,7 +40,10 @@ public class ViewPeg extends JPanel
 	{
 		width = m;
 		height = n;
+<<<<<<< HEAD:peg_sol/ViewPeg.java
         ModelPeg = model;
+=======
+>>>>>>> FETCH_HEAD:PegSol/peg_sol/ViewPeg.java
 	}
 	
 	
