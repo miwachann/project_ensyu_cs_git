@@ -5,9 +5,11 @@ package peg_sol;
 public class ControllerPeg {
     
 	
-	public ControllerPeg(ViewPeg p, ModelPeg m)
+	public ControllerPeg(ViewPeg v, ModelPeg m)
 	{
-		
+		view = v;
+        model = m;
+        gameflag = false;
 	}
 	
 	
@@ -16,6 +18,8 @@ public class ControllerPeg {
 	 */
 	public void newGame()
 	{
+        model.selectStage();
+		gameflag = true;
 		panel.repaint();
 	}
 	
@@ -25,6 +29,7 @@ public class ControllerPeg {
 	 */
 	public void resetStage()
 	{
+        model.resetStage();
 		panel.repaint();
 	}
 	
@@ -34,6 +39,7 @@ public class ControllerPeg {
 	 */
 	public void makeStage()
 	{
+        
 		panel.repaint();
 	}
 	

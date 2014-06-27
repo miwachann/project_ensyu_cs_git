@@ -1,4 +1,4 @@
-// Written by T. Ogihara (2012)
+ // Written by T. Ogihara (2012)
 
 package jp.obake;
 
