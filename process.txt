@@ -40,3 +40,25 @@
     「チーム作業」
     (3)チーム作業報告書     Report_team.ods
     (4)提出物チェックシート  checksheet.ods
+    
+第4回
+    「個人作業」
+    (1)内部設計書？
+        ーレビュー
+    (2)個人作業報告書       Report_member.ots
+    (3)テスト項目表
+    
+    「チーム作業」
+    (3)チーム作業報告書     Report_team.ods
+    (4)提出物チェックシート  checksheet.ods
+    
+第5回
+    「個人作業」
+    (1)内部設計書？
+        ーレビュー
+    (2)個人作業報告書       Report_member.ots
+    (3)テスト項目表
+    
+    「チーム作業」
+    (3)チーム作業報告書     Report_team.ods
+    (4)提出物チェックシート  checksheet.ods

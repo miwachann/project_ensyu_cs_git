@@ -7,7 +7,6 @@ import javax.swing.*;
 
 public class mainPeg extends JFrame
 {
-	
 	private ViewPeg view;
 	private ModelPeg model;
 	private ControllerPeg controller;
@@ -23,7 +22,7 @@ public class mainPeg extends JFrame
 	{
 		int x=7;
         int y=7;
-
+        
 		this.getContentPane().setLayout(null);
 		this.setSize(x * 50 + 50, y * 50 + 100);
 		this.setResizable(false);
@@ -48,7 +47,39 @@ public class mainPeg extends JFrame
 	{
 		JMenuBar bar = new JMenuBar();
 		JMenu menu = new JMenu("ゲーム");
-
+		
+		JMenuItem newgame = new JMenuItem("新しいゲームを始める");
+		newgame.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent ev)
+			{
+				//System.exit(0);
+			}
+		});
+		menu.add(newgame);
+		
+		JMenuItem restart = new JMenuItem("ゲームのやり直し");
+		restart.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent ev)
+			{
+				//System.exit(0);
+			}
+		});
+		menu.add(restart);
+		
+		JMenuItem newstage = new JMenuItem("ステージを作成する");
+		newstage.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent ev)
+			{
+				//System.exit(0);
+			}
+		});
+		menu.add(newstage);
+		
+		menu.addSeparator();
+		
 		JMenuItem quititem = new JMenuItem("終了");
 		quititem.addActionListener(new ActionListener()
 		{
@@ -57,8 +88,8 @@ public class mainPeg extends JFrame
 				System.exit(0);
 			}
 		});
-
 		menu.add(quititem);
+		
 		bar.add(menu);
 		this.setJMenuBar(bar);
 	}

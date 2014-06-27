@@ -4,7 +4,8 @@ package peg_sol;
 import java.awt.*;
 import javax.swing.*;
 
-public class ControllerPeg {
+public class ControllerPeg
+{
 	
 	ViewPeg view;
 	ModelPeg model;

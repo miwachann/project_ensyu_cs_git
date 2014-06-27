@@ -4,7 +4,7 @@ package peg_sol;
 import java.util.*;
 
 enum GridAttr {
-Grownd, Peg, SetPeg
+	Grownd, Peg, SetPeg
 };
 
 public class ModelPeg
