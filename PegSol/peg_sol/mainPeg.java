@@ -14,7 +14,8 @@ public class mainPeg extends JFrame
 	/**
 	 * mainPegのインスタンスの生成を行うメソッド
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args)
+	{
 		new mainPeg();
 	}
 	

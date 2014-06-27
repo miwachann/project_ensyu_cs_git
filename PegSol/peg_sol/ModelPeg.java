@@ -38,7 +38,7 @@ public class ModelPeg
 	/**
 	 * ステージの配置の読み込みを行うメソッド
 	 */
-	public void selectStage()
+	public void selectStage(int n)
 	{
 		
 	}
