@@ -13,15 +13,13 @@ MVCモデルのサンプル		obake
 
 ーーーーーーーーーーーーーペグ・ソリティアのプログラム実行に関して。ーーーーーーーーーーーーーー
 ターミナルを起動し、
-cd ~/Desktop/project_ensyu_cs_git/PegSol
+      $ cd ~/Desktop/project_ensyu_cs_git/PegSol
 （各個人の環境によって異なる場合がある。）
 
 実行できるmakeコマンドはMakefileを参照。
 
 
 ーーーーーーーーーーーーーgithubからのダウンロード方法ーーーーーーーーーーーーーーーーーーーー
-
-https://github.com/frederica07/project_ensyu_cs_git
 
 今回のプロジェクトの全てのファイルが置いてあります。
 ・メインの変更はプロジェクトリーダーが行います。決してむやみに変更をしないように。
