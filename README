@@ -13,7 +13,7 @@ MVCモデルのサンプル		obake
 
 ーーーーーーーーーーーーーペグ・ソリティアのプログラム実行に関して。ーーーーーーーーーーーーーー
 ターミナルを起動し、
-      $ cd ~/Desktop/project_ensyu_cs_git/PegSol
+    $ cd ~/Desktop/project_ensyu_cs_git/PegSol
 （各個人の環境によって異なる場合がある。）
 
 実行できるmakeコマンドはMakefileを参照。
