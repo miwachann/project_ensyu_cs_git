@@ -1,6 +1,7 @@
 
 package peg_sol;
 
+//import文に関しては。現在はObakeMuraのを適当に追加、随時添削して行く。
 import java.util.*;
 
 enum GridAttr

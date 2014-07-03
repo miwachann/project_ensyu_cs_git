@@ -1,6 +1,7 @@
 
 package peg_sol;
 
+//import文に関しては。現在はObakeMuraのを適当に追加、随時添削して行く。
 import java.awt.*;
 import javax.swing.*;
 
@@ -52,7 +53,7 @@ public class ControllerPeg
 	 */
 	public void didClick(int x, int y)
 	{
-		
+		System.out.println("x:" + x + "/ y:" + y);
 		
 	}
 }

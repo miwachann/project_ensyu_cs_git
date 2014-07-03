@@ -79,7 +79,7 @@ public class mainPeg extends JFrame
 		});
 		menu.add(newstage);
 		
-		menu.addSeparator();
+		menu.addSeparator();		//メニュー内に区切り線を挿入
 		
 		JMenuItem quititem = new JMenuItem("終了");
 		quititem.addActionListener(new ActionListener()
@@ -91,7 +91,7 @@ public class mainPeg extends JFrame
 		});
 		menu.add(quititem);
 		
-		bar.add(menu);
-		this.setJMenuBar(bar);
+		bar.add(menu);				//メニューバーにメニューを追加
+		this.setJMenuBar(bar);		//ウィンドウにメニューを追加
 	}
 }
