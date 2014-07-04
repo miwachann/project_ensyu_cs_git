@@ -54,8 +54,7 @@ public class ObakeMuraModel {
 			for(int j = 0; j < height; j++) {
 				if (arr[i][j] == GridAttr.Ghost){
 					arr[i][j] = GridAttr.Ground;
-				}else if (arr[i][j] == GridAttr.Occupied
-						|| arr[i][j] == GridAttr.Destroyed)
+				}else if (arr[i][j] == GridAttr.Occupied|| arr[i][j] == GridAttr.Destroyed)
 					arr[i][j] = GridAttr.House;
 				}
 			}

@@ -7,7 +7,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.net.URL;
 import java.util.*;
-import java.lang.ClassLoader;
 
 import javax.swing.*;
 
