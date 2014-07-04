@@ -89,18 +89,18 @@ public class ViewPeg extends JPanel
 	{
 		super.paintComponent(g);	//superクラスからpaintComponentの呼び出し
 		g.setColor(Color.WHITE);
-		/*
 		g.fillRect(0,0, width * gridWidth, height * gridHeight);
+		/*
 		for (int i=0; i<width; i++)
 		{
 			for (int j=0; j<height; j++)
 			{
 				Image img;
-				GridAttr attr = model.getAttribute(i, j);
+				GridAttr attr = pegModel.getAttribute(i, j);
 				g.drawImage(ground,i * gridWidth, j * gridHeight, this);
 				switch (attr)
 				{
-				
+					default: img = null; break;
 				}
 				if (img != null)	g.drawImage(img, i * gridWidth, j * gridHeight, this);
 			}
