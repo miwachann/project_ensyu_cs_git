@@ -85,6 +85,14 @@ public class ModelPeg
 	{
 		//ペグの選択時とペグの配置時の処理をわける。
 		/*
+		 * ペグの選択
+		 * クリックした場所がペグをおける場所か判定
+		 * おければペグをおく
+		 * 無理なら選択をやめる。
+		 */
+		
+		 */
+		/*
 		if (arr[x][y] == GridAttr.Ground)
 		{
 			arr[x][y] = GridAttr.Peg;

@@ -56,15 +56,5 @@ public class ControllerPeg
 	public void didClick(int x, int y)
 	{
 		System.out.println("x:" + x + "/ y:" + y);
-		
-		//ペグの選択時とペグの配置時の処理をわける。
-		/*
-		if (arr[x][y] == GridAttr.Ground)
-		{
-			arr[x][y] = GridAttr.Peg;
-			return true;
-		}
-		return false;
-		*/
 	}
 }
