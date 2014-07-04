@@ -41,8 +41,8 @@ public class ViewPeg extends JPanel
 	{
 		Class cls = this.getClass();
 		URL url;
-		//url = cls.getResource("PEG.gif");
-		//PEG = Toolkit.getDefaultToolkit().getImage(url);
+		url = cls.getResource("./src/ground.gif");
+		ground = Toolkit.getDefaultToolkit().getImage(url);
 		setGridSize(50, 50);
 	}
 	
@@ -87,9 +87,9 @@ public class ViewPeg extends JPanel
 	 */
 	public void paintComponent(Graphics g)
 	{
-		/*
 		super.paintComponent(g);	//superクラスからpaintComponentの呼び出し
 		g.setColor(Color.WHITE);
+		/*
 		g.fillRect(0,0, width * gridWidth, height * gridHeight);
 		for (int i=0; i<width; i++)
 		{
