@@ -10,11 +10,13 @@ public class ControllerPeg
 	
 	ViewPeg view;
 	ModelPeg model;
+	boolean gameflag;
 	
 	public ControllerPeg(ViewPeg v, ModelPeg m)
 	{
 		view = v;
         model = m;
+		gameflag = false;
 	}
 	
 	
@@ -55,5 +57,14 @@ public class ControllerPeg
 	{
 		System.out.println("x:" + x + "/ y:" + y);
 		
+		//ペグの選択時とペグの配置時の処理をわける。
+		/*
+		if (arr[x][y] == GridAttr.Ground)
+		{
+			arr[x][y] = GridAttr.Peg;
+			return true;
+		}
+		return false;
+		*/
 	}
 }

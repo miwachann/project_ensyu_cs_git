@@ -21,8 +21,8 @@ public class mainPeg extends JFrame
 	
 	public mainPeg()
 	{
-		int x=9;
-        int y=9;
+		int x=5;
+        int y=5;
         
 		this.getContentPane().setLayout(null);
 		this.setSize(x * 50 + 50, y * 50 + 100);

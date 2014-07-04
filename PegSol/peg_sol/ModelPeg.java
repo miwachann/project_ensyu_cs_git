@@ -6,7 +6,7 @@ import java.util.*;
 
 enum GridAttr
 {
-	Grownd, Peg, SetPeg
+	Ground, Peg, SetPeg
 };
 
 public class ModelPeg
@@ -23,7 +23,15 @@ public class ModelPeg
         height = n;
         
         arr = new GridAttr[width][height];
-        
+        /*
+        for(int i = 0; i < width; i++)
+		{
+			for(int j = 0; j < height; j++)
+			{
+					arr[i][j] = GridAttr.Ground;
+			}
+		}
+		*/
 	}
 	
 	
@@ -75,6 +83,15 @@ public class ModelPeg
 	 */
 	public boolean putPeg(int x, int y)
 	{
+		//ペグの選択時とペグの配置時の処理をわける。
+		/*
+		if (arr[x][y] == GridAttr.Ground)
+		{
+			arr[x][y] = GridAttr.Peg;
+			return true;
+		}
+		return false;
+		*/
 		return result;
 	}
 }
