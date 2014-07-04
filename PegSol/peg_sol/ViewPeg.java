@@ -41,24 +41,26 @@ public class ViewPeg extends JPanel
 	{
 		Class cls = this.getClass();
 		URL url;
-		url = cls.getResource("./src/ground.gif");
+		url = cls.getResource("ground.gif");
 		ground = Toolkit.getDefaultToolkit().getImage(url);
+		url = cls.getResource("peg.gif");
+		peg = Toolkit.getDefaultToolkit().getImage(url);
+		url = cls.getResource("peg2.gif");
+		setPeg = Toolkit.getDefaultToolkit().getImage(url);
 		setGridSize(50, 50);
 	}
 	
 	
 	public ViewPeg(int m, int n, ModelPeg model)
 	{
-		
 		super();		//親クラスの実行
 		width = m;
 		height = n;
 		pegModel = model;
-		if (ground == null)	this.getImages();		//起動時の画像を読み込み
+		if (peg == null)	this.getImages();		//起動時の画像を読み込み
 		this.setSize(new Dimension(width * gridWidth, height * gridHeight));
 		this.setPreferredSize(new Dimension(width * gridWidth, height * gridHeight));
 		repaint();									//呼び出されるたびに再描画(new game?)
-		
 	}
 	
 	
@@ -90,21 +92,22 @@ public class ViewPeg extends JPanel
 		super.paintComponent(g);	//superクラスからpaintComponentの呼び出し
 		g.setColor(Color.WHITE);
 		g.fillRect(0,0, width * gridWidth, height * gridHeight);
-		/*
+		
 		for (int i=0; i<width; i++)
 		{
 			for (int j=0; j<height; j++)
 			{
 				Image img;
 				GridAttr attr = pegModel.getAttribute(i, j);
-				g.drawImage(ground,i * gridWidth, j * gridHeight, this);
+				g.drawImage(ground, i * gridWidth, j * gridHeight, this);
 				switch (attr)
 				{
 					default: img = null; break;
 				}
 				if (img != null)	g.drawImage(img, i * gridWidth, j * gridHeight, this);
+				
 			}
 		}
-		*/
+		
 	}
 }

@@ -23,7 +23,6 @@ public class ModelPeg
         height = n;
         
         arr = new GridAttr[width][height];
-        /*
         for(int i = 0; i < width; i++)
 		{
 			for(int j = 0; j < height; j++)
@@ -31,7 +30,6 @@ public class ModelPeg
 					arr[i][j] = GridAttr.Ground;
 			}
 		}
-		*/
 	}
 	
 	
@@ -91,7 +89,6 @@ public class ModelPeg
 		 * 無理なら選択をやめる。
 		 */
 		
-		 */
 		/*
 		if (arr[x][y] == GridAttr.Ground)
 		{
