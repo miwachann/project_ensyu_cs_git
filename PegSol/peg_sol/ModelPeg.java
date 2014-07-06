@@ -13,7 +13,7 @@ public class ModelPeg
 {
 	int width,height;
     GridAttr[][] arr;
-    boolean result;
+    boolean result, selectFlag;
     
     
 	public ModelPeg(int m, int n)
@@ -77,6 +77,61 @@ public class ModelPeg
 	}
 	
 	/**
+     * 選択したペグが配置できるかをテェック後、
+     * 配置できるマスに薄いペグをセットするメソッド
+     * （要省略）
+     */
+	public void putSetPeg(int x, int y)
+    {
+        //右
+        if (x+2 <= width)
+        {
+            if (arr[x+1][y] == GridAttr.Peg && arr[x+2][y] != GridAttr.Peg)
+            {
+                arr[x+2][y] = GridAttr.SetPeg;
+            }
+        }
+        //左
+        if (x-2 >= 0)
+        {
+            if (arr[x-1][y] == GridAttr.Peg && arr[x-2][y] != GridAttr.Peg)
+            {
+                arr[x-2][y] = GridAttr.SetPeg;
+            }
+        }
+        //上
+        if (y-2 >= 0)
+        {
+            if (arr[x][y-1] == GridAttr.Peg && arr[x][y-2] != GridAttr.Peg)
+            {
+                arr[x][y-2] = GridAttr.SetPeg;
+            }
+        }
+        //下
+        if (y+2 <= height)
+        {
+            if (arr[x][y+1] == GridAttr.Peg && arr[x][y+2] != GridAttr.Peg)
+            {
+                arr[x][y+2] = GridAttr.SetPeg;
+            }
+        }
+    }
+	/*
+	 * SetPegを消去するメソッド
+	 */
+	public void cleanSetPeg()
+	{
+		for(int x = 0; x < width; x++)
+		{
+			for(int y = 0; y < height; y++)
+			{
+				if(arr[x][y] == GridAttr.SetPeg)	arr[x][y] = GridAttr.Ground;
+			}
+		}
+		selectFlag = false;
+	}
+	
+	/**
 	 * ペグの配置を行うメソッド
 	 */
 	public boolean putPeg(int x, int y)
@@ -89,12 +144,33 @@ public class ModelPeg
 		 * 無理なら選択をやめる。
 		 */
 		
-		
 		if (arr[x][y] == GridAttr.Ground)
 		{
+			if(selectFlag)
+			{
+				cleanSetPeg();
+				return true;
+			}
+			else
+			{
+				arr[x][y] = GridAttr.Peg;
+				return true;
+			}
+		}
+		else if(arr[x][y] == GridAttr.Peg)
+		{
+			putSetPeg(x, y);
+			selectFlag = true;
+			return true;
+		}
+		else if(arr[x][y] == GridAttr.SetPeg)
+		{
 			arr[x][y] = GridAttr.Peg;
+			cleanSetPeg();
 			return true;
 		}
 		return false;
 	}
+	
+	
 }
