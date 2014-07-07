@@ -68,6 +68,7 @@ public class FreeObakeMura extends JFrame {
 		menu.add(renewitem);
 		
 		menu.addSeparator();
+		
 		JMenuItem quititem = new JMenuItem("終了");
 		quititem.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent ev){

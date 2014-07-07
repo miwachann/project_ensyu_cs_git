@@ -81,14 +81,16 @@ public class ModelPeg
      * 配置できるマスに薄いペグをセットするメソッド
      * （要省略）
      */
-	public void putSetPeg(int x, int y)
+	public boolean putSetPeg(int x, int y)
     {
+		boolean set = false;
         //右
-        if (x+2 <= width)
+        if (x+2 < width)
         {
             if (arr[x+1][y] == GridAttr.Peg && arr[x+2][y] != GridAttr.Peg)
             {
                 arr[x+2][y] = GridAttr.SetPeg;
+                set = true;
             }
         }
         //左
@@ -97,6 +99,7 @@ public class ModelPeg
             if (arr[x-1][y] == GridAttr.Peg && arr[x-2][y] != GridAttr.Peg)
             {
                 arr[x-2][y] = GridAttr.SetPeg;
+                set = true;
             }
         }
         //上
@@ -105,18 +108,22 @@ public class ModelPeg
             if (arr[x][y-1] == GridAttr.Peg && arr[x][y-2] != GridAttr.Peg)
             {
                 arr[x][y-2] = GridAttr.SetPeg;
+                set = true;
             }
         }
         //下
-        if (y+2 <= height)
+        if (y+2 < height)
         {
             if (arr[x][y+1] == GridAttr.Peg && arr[x][y+2] != GridAttr.Peg)
             {
                 arr[x][y+2] = GridAttr.SetPeg;
+                set = true;
             }
         }
+        return set;
     }
-	/*
+	
+	/**
 	 * SetPegを消去するメソッド
 	 */
 	public void cleanSetPeg()
@@ -159,8 +166,9 @@ public class ModelPeg
 		}
 		else if(arr[x][y] == GridAttr.Peg)
 		{
-			putSetPeg(x, y);
-			selectFlag = true;
+			cleanSetPeg();
+			if(putSetPeg(x, y))
+				selectFlag = true;
 			return true;
 		}
 		else if(arr[x][y] == GridAttr.SetPeg)
@@ -169,6 +177,8 @@ public class ModelPeg
 			cleanSetPeg();
 			return true;
 		}
+		
+		
 		return false;
 	}
 	
