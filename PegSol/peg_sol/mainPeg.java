@@ -64,7 +64,7 @@ public class mainPeg extends JFrame
 		{
 			public void actionPerformed(ActionEvent ev)
 			{
-				//System.exit(0);
+				model.resetStage();
 			}
 		});
 		menu.add(restart);

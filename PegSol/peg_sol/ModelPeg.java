@@ -23,13 +23,7 @@ public class ModelPeg
         height = n;
         
         arr = new GridAttr[width][height];
-        for(int i = 0; i < width; i++)
-		{
-			for(int j = 0; j < height; j++)
-			{
-					arr[i][j] = GridAttr.Ground;
-			}
-		}
+        resetStage();
 	}
 	
 	
@@ -57,7 +51,13 @@ public class ModelPeg
 	 */
 	public void resetStage()
 	{
-		
+        for(int i = 0; i < width; i++)
+		{
+			for(int j = 0; j < height; j++)
+			{
+				arr[i][j] = GridAttr.Ground;
+			}
+		}
 	}
 	
 	/**
