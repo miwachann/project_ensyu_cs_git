@@ -16,7 +16,7 @@ public class ControllerPeg
 	{
 		view = v;
         model = m;
-		gameflag = true;
+		gameflag = false;
 	}
 	
 	
@@ -26,8 +26,8 @@ public class ControllerPeg
 	public void newGame()
 	{
         //model.selectStage();
-		//gameflag = true;
-		//panel.repaint();
+		gameflag = true;
+		view.repaint();
 	}
 	
 	
@@ -36,8 +36,8 @@ public class ControllerPeg
 	 */
 	public void resetStage()
 	{
-        //model.resetStage();
-		//panel.repaint();
+        model.resetStage();
+		view.repaint();
 	}
 	
 	
@@ -57,8 +57,13 @@ public class ControllerPeg
 	{
 		if (gameflag && model.putPeg(x, y))
 		{
-			System.out.println("x:" + x + "/ y:" + y);
 			view.repaint();
+			System.out.println("x:" + x + "/ y:" + y);
+			if (model.checkClear())
+			{
+				System.out.println("clear");
+				view.repaint();
+			}
 		}
 	}
 }

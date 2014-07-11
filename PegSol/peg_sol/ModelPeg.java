@@ -12,6 +12,7 @@ enum GridAttr
 public class ModelPeg
 {
 	int width,height;
+	int sx, sy;
     GridAttr[][] arr;
     boolean result, selectFlag;
     
@@ -21,7 +22,7 @@ public class ModelPeg
 		super();
         width = m;
         height = n;
-        
+        result = false;
         arr = new GridAttr[width][height];
         resetStage();
 	}
@@ -51,20 +52,40 @@ public class ModelPeg
 	 */
 	public void resetStage()
 	{
-        for(int i = 0; i < width; i++)
+		for(int x = 0; x < width; x++)
 		{
-			for(int j = 0; j < height; j++)
+			for(int y = 0; y < height; y++)
 			{
-				arr[i][j] = GridAttr.Ground;
+				arr[x][y] = GridAttr.Ground;
 			}
 		}
 	}
+	
 	
 	/**
 	 * クリアしているか詰んだか確認を行うメソッド
 	 */
 	public boolean checkClear()
 	{
+		int count = 0;
+		boolean nearPeg = false; 
+		result = false;
+		for(int x = 0; x < width; x++)
+		{
+			for(int y = 0; y < height; y++)
+			{
+				if(this.isPeg(x, y)){
+					count++;
+					if (this.isPeg(x+1, y) || this.isPeg(x-1, y) || this.isPeg(x, y+1) || this.isPeg(x, y-1))
+						nearPeg = true;
+				}
+			}
+		}
+		
+		if(!nearPeg)
+		{
+			if(count == 1)	result = true;
+		}
 		return result;
 	}
 	
@@ -77,56 +98,55 @@ public class ModelPeg
 	}
 	
 	/**
+	 * マスにペグが配置されているかを返すメソッド
+	 */
+	private boolean isPeg(int x, int y)
+	{
+		if(x < 0 || x >= width || y < 0 || y >= height) return false;
+		return (arr[x][y] == GridAttr.Peg);
+	}
+	
+	
+	/**
      * 選択したペグが配置できるかをテェック後、
      * 配置できるマスに薄いペグをセットするメソッド
      * （要省略）
      */
-	public boolean putSetPeg(int x, int y)
+	private boolean putSetPeg(int x, int y)
     {
 		boolean set = false;
         //右
-        if (x+2 < width)
+        if(x+2 < width && (this.isPeg(x+1, y) && !this.isPeg(x+2, y)))
         {
-            if (arr[x+1][y] == GridAttr.Peg && arr[x+2][y] != GridAttr.Peg)
-            {
                 arr[x+2][y] = GridAttr.SetPeg;
                 set = true;
-            }
         }
         //左
-        if (x-2 >= 0)
+        if(x-2 >= 0 && (this.isPeg(x-1, y) && !this.isPeg(x-2, y)))
         {
-            if (arr[x-1][y] == GridAttr.Peg && arr[x-2][y] != GridAttr.Peg)
-            {
                 arr[x-2][y] = GridAttr.SetPeg;
                 set = true;
-            }
         }
         //上
-        if (y-2 >= 0)
+        if(y-2 >= 0 && (this.isPeg(x, y-1) && !this.isPeg(x, y-2)))
         {
-            if (arr[x][y-1] == GridAttr.Peg && arr[x][y-2] != GridAttr.Peg)
-            {
                 arr[x][y-2] = GridAttr.SetPeg;
                 set = true;
-            }
         }
         //下
-        if (y+2 < height)
+        if(y+2 < height && (this.isPeg(x, y+1) && !this.isPeg(x, y+2)))
         {
-            if (arr[x][y+1] == GridAttr.Peg && arr[x][y+2] != GridAttr.Peg)
-            {
                 arr[x][y+2] = GridAttr.SetPeg;
                 set = true;
-            }
         }
         return set;
     }
 	
+	
 	/**
 	 * SetPegを消去するメソッド
 	 */
-	public void cleanSetPeg()
+	private void cleanSetPeg()
 	{
 		for(int x = 0; x < width; x++)
 		{
@@ -138,20 +158,28 @@ public class ModelPeg
 		selectFlag = false;
 	}
 	
+	
 	/**
-	 * ペグの配置を行うメソッド
+	 * ペグの移動を行うメソッド
+	 */
+	private void movePeg(int x, int y)
+	{
+		arr[x][y] = GridAttr.Peg;
+		arr[sx][sy] = GridAttr.Ground;
+		if(x > sx)	x--;
+		if(x < sx)	x++;
+		if(y > sy)	y--;
+		if(y < sy)	y++;
+		arr[x][y] = GridAttr.Ground;
+		cleanSetPeg();
+	}
+	
+	/**
+	 * 移動するペグの選択・配置を行うメソッド
 	 */
 	public boolean putPeg(int x, int y)
 	{
-		//ペグの選択時とペグの配置時の処理をわける。
-		/*
-		 * ペグの選択
-		 * クリックした場所がペグをおける場所か判定
-		 * おければペグをおく
-		 * 無理なら選択をやめる。
-		 */
-		
-		if (arr[x][y] == GridAttr.Ground)
+		if(arr[x][y] == GridAttr.Ground)
 		{
 			if(selectFlag)
 			{
@@ -164,23 +192,21 @@ public class ModelPeg
 				return true;
 			}
 		}
-		else if(arr[x][y] == GridAttr.Peg)
+		else if(this.isPeg(x, y))
 		{
 			cleanSetPeg();
-			if(putSetPeg(x, y))
-				selectFlag = true;
+			sx = x;
+			sy = y;
+			System.out.println("sx:" + sx + "/ sy:" + sy);
+			if(putSetPeg(x, y)) selectFlag = true;
 			return true;
 		}
 		else if(arr[x][y] == GridAttr.SetPeg)
 		{
-			arr[x][y] = GridAttr.Peg;
-			cleanSetPeg();
+			movePeg(x, y);
 			return true;
 		}
-		
-		
 		return false;
 	}
-	
 	
 }

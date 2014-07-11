@@ -54,7 +54,7 @@ public class mainPeg extends JFrame
 		{
 			public void actionPerformed(ActionEvent ev)
 			{
-				//System.exit(0);
+				controller.newGame();
 			}
 		});
 		menu.add(newgame);
@@ -64,7 +64,7 @@ public class mainPeg extends JFrame
 		{
 			public void actionPerformed(ActionEvent ev)
 			{
-				model.resetStage();
+				controller.resetStage();
 			}
 		});
 		menu.add(restart);
